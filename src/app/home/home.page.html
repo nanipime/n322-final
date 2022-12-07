@@ -1,0 +1,48 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-buttons>
+      <ion-title> Doggie Dates </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card
+    *ngFor="let card of cards"
+    routerLink="/details/{{card.id}}"
+    routerDirection="forward"
+  >
+    <ion-card-header>
+      <img id="home-img" src="{{ card.cardImg }}" />
+      <ion-card-subtitle>{{ card.subTitle}}</ion-card-subtitle>
+      <ion-card-title>{{ card.title}} </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content> {{ card.content }} </ion-card-content>
+  </ion-card>
+
+  <ion-footer>
+    <ion-toolbar id="footer-toolbar" slot="primary">
+      <ion-tabs id="bottom-tabs">
+        <ion-tab-bar>
+          <ion-tab-button tab="home">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="chat">
+            <ion-icon name="chatbubbles"></ion-icon>
+            <ion-label>Chat</ion-label>
+            <ion-badge></ion-badge>
+          </ion-tab-button>
+
+          <ion-tab-button tab="profile">
+            <ion-icon name="person-circle"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

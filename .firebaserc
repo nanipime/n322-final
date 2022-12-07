@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "n423-npg": {
+      "hosting": {
+        "app": [
+          "n423-npg"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "n423-npg"
+  }
+}

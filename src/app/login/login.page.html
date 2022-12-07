@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="credentials">
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+      ></ion-input>
+      <ion-note
+        slot="error"
+        *ngIf="(email.dirty || email.touched) && email.errors"
+        >Email is Invalid!</ion-note
+      >
+    </ion-item>
+
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      ></ion-input>
+      <ion-note
+        slot="error"
+        *ngIf="(password.dirty || password.touched) && password.errors"
+        >Password needs to be minimum of 8 characters and max of 24!</ion-note
+      >
+    </ion-item>
+
+    <ion-button
+      type="submit"
+      expand="block"
+      (click)="login()"
+      [disabled]="!credentials.valid"
+      >Log In</ion-button
+    >
+    <ion-button
+      type="buttom"
+      expand="block"
+      color="secondary"
+      (click)="register()"
+      >Create Account</ion-button
+    >
+  </form>
+</ion-content>

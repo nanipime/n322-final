@@ -1,0 +1,16 @@
+#home-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: x-large;
+  background-color: rgb(113, 186, 251);
+  color: black;
+}
+
+#bottom-tabs {
+  //position: fixed;
+}
+
+ion-footer {
+  position: sticky;
+}
